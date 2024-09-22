@@ -2,7 +2,7 @@ import { randomUUID } from 'crypto';
 import { Replace } from 'src/utils/replace';
 
 interface UsuarioSchema {
-  name: string;
+  nome: string;
   email: string;
   password: string;
   usuario: string;
@@ -11,8 +11,8 @@ interface UsuarioSchema {
 }
 
 export class Usuario {
-  props: UsuarioSchema;
-  _id: string;
+  private props: UsuarioSchema;
+  private _id: string;
 
   constructor(
     props: Replace<UsuarioSchema, { dataCadastro?: Date }>,
@@ -29,12 +29,12 @@ export class Usuario {
     return this._id;
   }
 
-  get name(): string {
-    return this.props.name;
+  get nome(): string {
+    return this.props.nome;
   }
 
-  set name(name: string) {
-    this.props.name = name;
+  set nome(nome: string) {
+    this.props.nome = nome;
   }
 
   get email(): string {

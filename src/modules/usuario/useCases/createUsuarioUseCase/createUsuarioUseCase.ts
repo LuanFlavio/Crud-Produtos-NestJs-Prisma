@@ -5,7 +5,7 @@ import { hash } from 'bcrypt';
 
 interface CreatedUsuarioRequest {
   email: string;
-  name: string;
+  nome: string;
   password: string;
   usuario: string;
   cpf: string;
@@ -18,14 +18,14 @@ export class CreateUsuarioUseCase {
   async execute({
     cpf,
     email,
-    name,
+    nome,
     password,
     usuario,
   }: CreatedUsuarioRequest) {
     const _usuario = new Usuario({
       cpf,
       email,
-      name,
+      nome,
       password: await hash(password, 10),
       usuario,
     });

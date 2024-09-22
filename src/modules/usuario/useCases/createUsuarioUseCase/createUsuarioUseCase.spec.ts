@@ -17,7 +17,7 @@ describe('Criando Usuário', () => {
     const usuario = await createUsuarioUseCase.execute({
       cpf: '12301203102',
       email: 'teste@teste.com',
-      name: 'Teste',
+      nome: 'Teste',
       password: '1234',
       usuario: 'teste',
     });
@@ -31,7 +31,7 @@ describe('Criando Usuário', () => {
     const usuario = await createUsuarioUseCase.execute({
       cpf: '12301203102',
       email: 'teste@teste.com',
-      name: 'Teste',
+      nome: 'Teste',
       password: passwordUsuarioSemCripto,
       usuario: 'teste',
     });
