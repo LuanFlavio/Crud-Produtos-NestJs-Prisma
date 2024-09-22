@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { UsuarioRepository } from '../repositories/UsuarioRepository';
-import { Usuario } from '../entities/Usuario';
+import { UsuarioRepository } from '../../repositories/UsuarioRepository';
+import { Usuario } from '../../entities/Usuario';
 import { hash } from 'bcrypt';
 
 interface CreatedUsuarioRequest {

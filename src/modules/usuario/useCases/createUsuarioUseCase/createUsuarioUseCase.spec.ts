@@ -1,5 +1,5 @@
 import { compare } from 'bcrypt';
-import { UsuarioRepositoryInMemory } from '../repositories/UsuarioRepositoryInMemory';
+import { UsuarioRepositoryInMemory } from '../../repositories/UsuarioRepositoryInMemory';
 import { CreateUsuarioUseCase } from './createUsuarioUseCase';
 
 let createUsuarioUseCase: CreateUsuarioUseCase;
