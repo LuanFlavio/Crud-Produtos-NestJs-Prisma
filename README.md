@@ -43,6 +43,9 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+# create default user
+$ npm run seed
 ```
 
 ## Run tests
