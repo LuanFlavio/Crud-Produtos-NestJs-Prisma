@@ -1,7 +1,11 @@
-import { NotFoundException, UnauthorizedException } from '@nestjs/common'
+import {
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common'
 import { ProdutoRepository } from '../../repositories/produtoRepository'
 
-interface EditNoteRequest {
+interface EditProdutoRequest {
   nome: string
   quantidade: number
   valor: number
@@ -9,6 +13,7 @@ interface EditNoteRequest {
   usuarioId: string
 }
 
+@Injectable()
 export class EditProdutoUseCase {
   constructor(private produtoRepository: ProdutoRepository) {}
 
@@ -18,7 +23,7 @@ export class EditProdutoUseCase {
     produtoId,
     nome,
     usuarioId,
-  }: EditNoteRequest) {
+  }: EditProdutoRequest) {
     const produto = await this.produtoRepository.findById(produtoId)
 
     if (!produto) throw new NotFoundException()

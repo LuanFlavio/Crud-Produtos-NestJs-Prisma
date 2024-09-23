@@ -30,7 +30,7 @@ model Usuario {
 model Produto {
   id            String   @id
   nome          String
-  valor         Decimal
+  valor         Float
   quantidade    Int
   dataCadastro  DateTime @map("data_cadastro")
   cadastradoPor Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)

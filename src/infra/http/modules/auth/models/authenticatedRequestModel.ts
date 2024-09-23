@@ -1,4 +1,4 @@
-export class AuthenticatedRequestModel extends Request {
+export class AuthenticatedRequestModel {
   user: {
     id: string
     cpf: string

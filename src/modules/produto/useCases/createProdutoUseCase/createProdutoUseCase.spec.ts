@@ -15,7 +15,7 @@ describe('Criar Produto', () => {
 
     await createProdutoUseCase.execute({
       nome: 'prato',
-      idUsuario: '123123',
+      usuarioId: '123123',
       quantidade: 2,
       valor: 2,
     })

@@ -20,7 +20,7 @@ describe('Buscar produto em range', () => {
     )
     produtoRepositoryInMemory.produtos = produtos
     const result = await getManyProdutoUseCase.execute({
-      idUsuario: usuario.id,
+      usuarioId: usuario.id,
     })
 
     expect(result).toEqual(produtos)
@@ -37,7 +37,7 @@ describe('Buscar produto em range', () => {
     produtoRepositoryInMemory.produtos = produtos
 
     const result = await getManyProdutoUseCase.execute({
-      idUsuario: usuario1.id,
+      usuarioId: usuario1.id,
     })
 
     expect(result).toHaveLength(5)
@@ -52,7 +52,7 @@ describe('Buscar produto em range', () => {
     produtoRepositoryInMemory.produtos = produtos
 
     const result = await getManyProdutoUseCase.execute({
-      idUsuario: usuario.id,
+      usuarioId: usuario.id,
       perPage: '8',
     })
 
@@ -73,7 +73,7 @@ describe('Buscar produto em range', () => {
     let result: Produto[]
 
     result = await getManyProdutoUseCase.execute({
-      idUsuario: usuario.id,
+      usuarioId: usuario.id,
       perPage: '5',
       page: '2',
     })
@@ -81,7 +81,7 @@ describe('Buscar produto em range', () => {
     expect(result[0].nome).toEqual('page 2')
 
     result = await getManyProdutoUseCase.execute({
-      idUsuario: usuario.id,
+      usuarioId: usuario.id,
       perPage: '5',
       page: '1',
     })

@@ -21,7 +21,7 @@ describe('Deletar produto', () => {
     produtoRepositoryInMemory.produtos = [produto]
     await deleteProdutoUseCase.execute({
       produtoId: produto.id,
-      idUsuario: usuario.id,
+      usuarioId: usuario.id,
     })
 
     expect(produtoRepositoryInMemory.produtos).toHaveLength(0)
@@ -31,7 +31,7 @@ describe('Deletar produto', () => {
     expect(async () => {
       await deleteProdutoUseCase.execute({
         produtoId: 'fakeId',
-        idUsuario: 'fakeId',
+        usuarioId: 'fakeId',
       })
     }).rejects.toThrowError(NotFoundException)
   })
@@ -43,7 +43,7 @@ describe('Deletar produto', () => {
     expect(async () => {
       await deleteProdutoUseCase.execute({
         produtoId: produto.id,
-        idUsuario: 'fakeId',
+        usuarioId: 'fakeId',
       })
     }).rejects.toThrowError(UnauthorizedException)
   })

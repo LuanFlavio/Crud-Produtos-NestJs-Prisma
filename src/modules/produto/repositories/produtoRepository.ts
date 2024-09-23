@@ -1,4 +1,5 @@
 import { Produto } from '../entities/Produto'
+
 export abstract class ProdutoRepository {
   abstract create(produto: Produto): Promise<void>
   abstract findById(id: string): Promise<Produto | null>

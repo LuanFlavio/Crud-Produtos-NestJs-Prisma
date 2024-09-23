@@ -1,15 +1,20 @@
-import { NotFoundException, UnauthorizedException } from '@nestjs/common'
+import {
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common'
 import { ProdutoRepository } from '../../repositories/produtoRepository'
 
 interface DeleteprodutoRequest {
   produtoId: string
-  idUsuario: string
+  usuarioId: string
 }
 
+@Injectable()
 export class DeleteProdutoUseCase {
   constructor(private produtoRepository: ProdutoRepository) {}
 
-  async execute({ produtoId, idUsuario: userId }: DeleteprodutoRequest) {
+  async execute({ produtoId, usuarioId: userId }: DeleteprodutoRequest) {
     const produto = await this.produtoRepository.findById(produtoId)
 
     if (!produto) throw new NotFoundException()

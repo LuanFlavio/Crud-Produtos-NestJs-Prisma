@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common'
 import { Produto } from '../../entities/Produto'
 import { ProdutoRepository } from '../../repositories/ProdutoRepository'
 
@@ -5,15 +6,16 @@ interface CreateProdutoRequest {
   nome: string
   valor: number
   quantidade: number
-  idUsuario: string
+  usuarioId: string
 }
 
+@Injectable()
 export class CreateProdutoUseCase {
   constructor(private produtoRepository: ProdutoRepository) {}
 
-  async execute({ idUsuario, nome, quantidade, valor }: CreateProdutoRequest) {
+  async execute({ usuarioId, nome, quantidade, valor }: CreateProdutoRequest) {
     const produto = new Produto({
-      idUsuario,
+      usuarioId,
       nome,
       quantidade,
       valor,
@@ -21,6 +23,6 @@ export class CreateProdutoUseCase {
 
     await this.produtoRepository.create(produto)
 
-    return Produto
+    return produto
   }
 }

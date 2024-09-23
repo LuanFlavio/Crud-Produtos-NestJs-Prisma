@@ -5,7 +5,7 @@ interface ProdutoSchema {
   nome: string
   valor: number
   quantidade: number
-  idUsuario: string
+  usuarioId: string
   dataCadastro: Date
 }
 
@@ -54,7 +54,7 @@ export class Produto {
   }
 
   get idUsuario(): string {
-    return this.props.idUsuario
+    return this.props.usuarioId
   }
 
   get dataCadastro(): Date {
