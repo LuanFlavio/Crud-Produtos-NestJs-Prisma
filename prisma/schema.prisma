@@ -14,24 +14,27 @@ datasource db {
 }
 
 model Usuario {
-  id           String   @id
+  id           String    @id
   nome         String
-  email        String   @unique
-  usuario      String   @unique
+  email        String    @unique
+  usuario      String    @unique
   password     String
-  cpf          String   @unique
-  dataCadastro DateTime @map("data_cadastro")
+  cpf          String    @unique
+  dataCadastro DateTime  @map("data_cadastro")
   cargo        String
+  Produto      Produto[]
 
   @@map("usuarios")
 }
 
 model Produto {
-  id           String   @id
-  nome         String
-  valor        Decimal
-  quantidade   Int
-  dataCadastro DateTime @map("data_cadastro")
+  id            String   @id
+  nome          String
+  valor         Decimal
+  quantidade    Int
+  dataCadastro  DateTime @map("data_cadastro")
+  cadastradoPor Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  usuarioId     String
 
   @@map("produtos")
 }
