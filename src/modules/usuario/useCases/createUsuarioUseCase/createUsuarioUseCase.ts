@@ -1,14 +1,14 @@
-import { Injectable } from '@nestjs/common';
-import { UsuarioRepository } from '../../repositories/UsuarioRepository';
-import { Usuario } from '../../entities/Usuario';
-import { hash } from 'bcrypt';
+import { Injectable } from '@nestjs/common'
+import { UsuarioRepository } from '../../repositories/UsuarioRepository'
+import { Usuario } from '../../entities/Usuario'
+import { hash } from 'bcrypt'
 
 interface CreatedUsuarioRequest {
-  email: string;
-  nome: string;
-  password: string;
-  usuario: string;
-  cpf: string;
+  email: string
+  nome: string
+  password: string
+  usuario: string
+  cpf: string
 }
 
 @Injectable()
@@ -28,10 +28,10 @@ export class CreateUsuarioUseCase {
       nome,
       password: await hash(password, 10),
       usuario,
-    });
+    })
 
-    await this.usuarioRepository.create(_usuario);
+    await this.usuarioRepository.create(_usuario)
 
-    return _usuario;
+    return _usuario
   }
 }

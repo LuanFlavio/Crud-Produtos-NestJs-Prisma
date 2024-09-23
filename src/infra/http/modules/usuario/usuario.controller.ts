@@ -1,7 +1,7 @@
-import { Body, Controller, Post } from '@nestjs/common';
-import { CreateUsuarioUseCase } from 'src/modules/usuario/useCases/createUsuarioUseCase/createUsuarioUseCase';
-import { CreateUsuarioBody } from './dtos/usuarioBody';
-import { UsuarioViewModel } from './viewModel/viewModel';
+import { Body, Controller, Post } from '@nestjs/common'
+import { CreateUsuarioUseCase } from 'src/modules/usuario/useCases/createUsuarioUseCase/createUsuarioUseCase'
+import { CreateUsuarioBody } from './dtos/usuarioBody'
+import { UsuarioViewModel } from './viewModel/viewModel'
 
 @Controller('usuarios')
 export class UsuarioController {
@@ -9,7 +9,7 @@ export class UsuarioController {
 
   @Post()
   async createPost(@Body() body: CreateUsuarioBody) {
-    const { cpf, email, nome, password, usuario } = body;
+    const { cpf, email, nome, password, usuario } = body
 
     const _usuario = await this.createUsuarioUseCase.execute({
       cpf,
@@ -17,8 +17,8 @@ export class UsuarioController {
       nome,
       password,
       usuario,
-    });
+    })
 
-    return UsuarioViewModel.toHttp(_usuario);
+    return UsuarioViewModel.toHttp(_usuario)
   }
 }

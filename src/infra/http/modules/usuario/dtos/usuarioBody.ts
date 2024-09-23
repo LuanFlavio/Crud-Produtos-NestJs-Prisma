@@ -1,24 +1,25 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator'
 
 export class CreateUsuarioBody {
   @IsString()
   @IsEmail()
   @IsNotEmpty()
-  email: string;
+  email: string
 
   @IsString()
   @IsNotEmpty()
-  nome: string;
+  nome: string
 
   @IsString()
   @IsNotEmpty()
-  password: string;
+  password: string
 
   @IsString()
   @IsNotEmpty()
-  usuario: string;
+  @MinLength(4)
+  usuario: string
 
   @IsString()
   @IsNotEmpty()
-  cpf: string;
+  cpf: string
 }

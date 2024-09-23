@@ -1,4 +1,4 @@
-import { Usuario } from 'src/modules/usuario/entities/Usuario';
+import { Usuario } from 'src/modules/usuario/entities/Usuario'
 
 export class UsuarioViewModel {
   static toHttp({ cpf, dataCadastro, email, id, nome, usuario }: Usuario) {
@@ -9,6 +9,6 @@ export class UsuarioViewModel {
       id,
       nome,
       usuario,
-    };
+    }
   }
 }
