@@ -22,4 +22,8 @@ export class CreateUsuarioBody {
   @IsString()
   @IsNotEmpty()
   cpf: string
+
+  @IsString()
+  @IsNotEmpty()
+  cargo: string
 }

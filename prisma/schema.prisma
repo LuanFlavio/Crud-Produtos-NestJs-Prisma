@@ -21,6 +21,7 @@ model Usuario {
   password     String
   cpf          String   @unique
   dataCadastro DateTime @map("data_cadastro")
+  cargo        String
 
   @@map("usuarios")
 }

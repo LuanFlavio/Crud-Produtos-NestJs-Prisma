@@ -9,7 +9,7 @@ export class UsuarioController {
 
   @Post()
   async createPost(@Body() body: CreateUsuarioBody) {
-    const { cpf, email, nome, password, usuario } = body
+    const { cpf, email, nome, password, usuario, cargo } = body
 
     const _usuario = await this.createUsuarioUseCase.execute({
       cpf,
@@ -17,6 +17,7 @@ export class UsuarioController {
       nome,
       password,
       usuario,
+      cargo,
     })
 
     return UsuarioViewModel.toHttp(_usuario)

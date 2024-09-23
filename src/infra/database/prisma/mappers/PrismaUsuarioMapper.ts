@@ -10,8 +10,9 @@ export class PrismaUsuarioMapper {
     nome,
     password,
     usuario,
+    cargo,
   }: Usuario): UsuarioRaw {
-    return { cpf, dataCadastro, email, id, nome, password, usuario }
+    return { cpf, dataCadastro, email, id, nome, password, usuario, cargo }
   }
 
   static toDomain({
@@ -22,6 +23,7 @@ export class PrismaUsuarioMapper {
     nome,
     password,
     usuario,
+    cargo,
   }: UsuarioRaw): Usuario {
     return new Usuario(
       {
@@ -31,6 +33,7 @@ export class PrismaUsuarioMapper {
         nome,
         password,
         usuario,
+        cargo,
       },
       id,
     )

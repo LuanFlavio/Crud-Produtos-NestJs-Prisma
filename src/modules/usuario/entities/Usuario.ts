@@ -8,6 +8,7 @@ interface UsuarioSchema {
   usuario: string
   cpf: string
   dataCadastro: Date
+  cargo: string
 }
 
 export class Usuario {
@@ -75,5 +76,13 @@ export class Usuario {
 
   set dataCadastro(dataCadastro: Date) {
     this.props.dataCadastro = dataCadastro
+  }
+
+  get cargo(): string {
+    return this.props.cargo
+  }
+
+  set cargo(cargo: string) {
+    this.props.cargo = cargo
   }
 }

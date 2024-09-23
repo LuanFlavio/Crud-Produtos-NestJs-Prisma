@@ -9,6 +9,7 @@ interface CreatedUsuarioRequest {
   password: string
   usuario: string
   cpf: string
+  cargo: string
 }
 
 @Injectable()
@@ -21,6 +22,7 @@ export class CreateUsuarioUseCase {
     nome,
     password,
     usuario,
+    cargo,
   }: CreatedUsuarioRequest) {
     const _usuario = new Usuario({
       cpf,
@@ -28,6 +30,7 @@ export class CreateUsuarioUseCase {
       nome,
       password: await hash(password, 10),
       usuario,
+      cargo,
     })
 
     await this.usuarioRepository.create(_usuario)

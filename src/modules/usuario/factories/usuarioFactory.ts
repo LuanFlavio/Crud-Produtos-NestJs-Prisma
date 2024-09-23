@@ -10,6 +10,7 @@ export const makeUsuario = ({ id, ...override }: Override) => {
       password: '1234',
       usuario: 'teste',
       cpf: '12312312312',
+      cargo: 'administrador',
       ...override,
     },
     id,

@@ -3,4 +3,5 @@ export interface UsuarioPayload {
   cpf: string
   nome: string
   dataCadastro: string
+  cargo: string
 }

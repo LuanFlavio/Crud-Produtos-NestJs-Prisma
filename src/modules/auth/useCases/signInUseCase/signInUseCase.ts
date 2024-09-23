@@ -17,6 +17,7 @@ export class SignInUseCase {
       cpf: usuario.cpf,
       nome: usuario.nome,
       dataCadastro: usuario.dataCadastro.toJSON(),
+      cargo: usuario.cargo,
     }
 
     const jwtToken = this.jwtService.sign(payload)
